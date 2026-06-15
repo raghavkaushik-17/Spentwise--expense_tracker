@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Wallet, Eye, EyeOff } from 'lucide-react'
+import { Eye, EyeOff } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import toast from 'react-hot-toast'
+import logo from '../assets/logo.png'
 
 export default function SignIn() {
   const { signIn, signInWithGoogle } = useAuth()
@@ -27,14 +28,12 @@ export default function SignIn() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <Wallet size={22} className="text-accent-600" />
-          <span className="text-lg font-semibold text-gray-900">Spendwise</span>
+        <div className="flex items-center justify-center mb-8">
+          <img src={logo} alt="Logo" className="h-12 w-auto object-contain" />
         </div>
 
         <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-          <h1 className="text-base font-semibold text-gray-900 mb-1">Welcome back</h1>
-          <p className="text-sm text-gray-500 mb-6">Sign in to your account</p>
+
 
           {/* Google */}
           <button

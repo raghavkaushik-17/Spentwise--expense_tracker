@@ -1,5 +1,6 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import logo from '../../assets/logo.png'
 import {
   LayoutDashboard, ArrowLeftRight, PieChart, BarChart3,
   Wallet, LogOut, Upload, Menu, X, ChevronRight
@@ -9,7 +10,7 @@ import UploadModal from '../upload/UploadModal'
 import { useTransactions } from '../../hooks/useTransactions'
 
 const NAV = [
-  { to: '/',             label: 'Dashboard',    icon: LayoutDashboard },
+  { to: '/dashboard',    label: 'Dashboard',    icon: LayoutDashboard },
   { to: '/transactions', label: 'Transactions', icon: ArrowLeftRight },
   { to: '/budgets',      label: 'Budgets',      icon: PieChart },
   { to: '/reports',      label: 'Reports',      icon: BarChart3 },
@@ -41,10 +42,7 @@ export default function Layout() {
       `}>
         {/* Logo */}
         <div className="h-14 flex items-center px-5 border-b border-gray-200">
-          <div className="flex items-center gap-2">
-            <Wallet size={18} className="text-accent-600" />
-            <span className="text-sm font-semibold text-gray-900">Spendwise</span>
-          </div>
+          <img src={logo} alt="Logo" className="h-8 w-auto object-contain" />
           <button className="ml-auto lg:hidden" onClick={() => setMobileOpen(false)}>
             <X size={18} className="text-gray-400" />
           </button>
@@ -119,9 +117,8 @@ export default function Layout() {
           <button onClick={() => setMobileOpen(true)}>
             <Menu size={18} className="text-gray-600" />
           </button>
-          <div className="flex items-center gap-2 mx-auto">
-            <Wallet size={16} className="text-accent-600" />
-            <span className="text-sm font-semibold">Spendwise</span>
+          <div className="flex-1 flex justify-center">
+            <img src={logo} alt="Logo" className="h-8 w-auto object-contain" />
           </div>
           <button
             onClick={() => setUploadOpen(true)}
