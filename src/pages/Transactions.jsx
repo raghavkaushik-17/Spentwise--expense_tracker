@@ -94,8 +94,8 @@ export default function Transactions() {
       {/* Table */}
       <div className="card p-0 overflow-hidden">
         {filtered.length === 0 ? (
-          <div className="py-12 text-center text-sm text-gray-400">
-            {search || filterCat !== 'all' ? 'No transactions match your filters.' : 'No transactions yet.'}
+          <div className="py-12 text-center text-sm text-gray-500">
+            {search || filterCat !== 'all' ? 'Nothing found. Try a different filter, or stop trying to hide your coffee expenses.' : 'No transactions yet. Either you are incredibly frugal, or you just downloaded this app.'}
           </div>
         ) : (
           <table className="w-full text-sm">
